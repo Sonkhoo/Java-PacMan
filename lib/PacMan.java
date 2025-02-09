@@ -29,6 +29,11 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         }
 
         void updateDirection(char direction) {
+
+            // Saves the previous direction.
+            // Updates the direction and recalculates the velocity (by calling updateVelocity()).
+            // Attempts to move the block by adding the velocity.
+            // Checks for collisions with any walls. If a collision occurs, it reverses the movement and reverts to the previous direction.
             char prevDirection = this.direction;
             this.direction = direction;
             updateVelocity();
